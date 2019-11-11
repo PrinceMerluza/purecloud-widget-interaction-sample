@@ -9,7 +9,11 @@
   <script src="https://sdk-cdn.mypurecloud.com/javascript/62.0.0/purecloud-platform-client-v2.min.js"></script>
 </head>
 <body>
-    
+  <h1>
+    Reference Id: 
+    <span id="reference-id"></span>
+  </h1>
+
   <script>
     // PureCloud OAuth information
     const platformClient = require('platformClient');
@@ -68,14 +72,13 @@
       console.log(topic);
       console.log(eventBody);
       
-      // Once chat arrives display custom field to page
+      // Once chat arrives display custom field 'referenceId' to page
       if(topic === topicId){
         let customer = eventBody.participants.filter(
           participant => participant.purpose === "customer")[0];
-        let agent = eventBody.participants.filter(
-          participant => participant.purpose === 'agent')[0];
-
-        console.log('Chatt notification');
+    
+        let refId = customer.attributes['context/referenceId'];
+        document.getElementById('reference-id').innerText = refId;
       }
     }
   </script>
