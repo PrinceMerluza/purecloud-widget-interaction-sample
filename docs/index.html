@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Widget Sample</title>
 
-  <script src="https://sdk-cdn.mypurecloud.com/client-apps/1.3.0/purecloud-client-app-sdk.js"></script>
   <script src="https://sdk-cdn.mypurecloud.com/javascript/62.0.0/purecloud-platform-client-v2.min.js"></script>
 </head>
 <body>
@@ -16,7 +15,7 @@
     const platformClient = require('platformClient');
     const client = platformClient.ApiClient.instance;
     const clientId = 'e7de8a75-62bb-43eb-9063-38509f8c21af';
-    const redirectUri = "https://mypurecloud.github.io/purecloud-premium-app/";
+    const redirectUri = 'https://github.com/PrinceMerluza/purecloud-widget-interaction-sample';
 
     // API instances
     const usersApi = new platformClient.UsersApi();
@@ -76,6 +75,7 @@
         let agent = eventBody.participants.filter(
           participant => participant.purpose === 'agent')[0];
 
+        console.log('Chatt notification');
       }
     }
   </script>
