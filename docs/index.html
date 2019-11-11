@@ -77,7 +77,7 @@
         let customer = eventBody.participants.filter(
           participant => participant.purpose === "customer")[0];
     
-        let refId = customer.attributes['context/referenceId'];
+        let refId = customer.attributes['context.referenceId'];
         document.getElementById('reference-id').innerText = refId;
       }
     }
